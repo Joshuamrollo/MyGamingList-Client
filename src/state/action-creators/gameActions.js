@@ -4,7 +4,7 @@ import { returnErrors } from './errorActions';
 export const getGames = () => dispatch => {
     dispatch(setGamesLoading());
     axiosInstance
-        .get('/api/games/get')
+        .get('https://mygaminglist-api-jmr.herokuapp.com/api/games/get')
         .then(res => dispatch({
             type: 'getGames',
             payload: res.data
