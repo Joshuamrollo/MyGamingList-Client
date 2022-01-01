@@ -46,9 +46,9 @@ export const login = ({email, password}) => dispatch => {
         }
     }
 
-    const body = JSON.stringify({email, password});
+    const body = JSON.stringify({email: email, password: password});
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/auth/login', {mode: 'no-cors'}, body, config)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/auth/login', body, config)
         .then(res => dispatch({
             type: 'LOGIN_SUCCESS',
             payload: res.data
@@ -83,7 +83,7 @@ export const addGameToUser2 = (game, user) => dispatch => {
 
     const body = { list, id };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', {mode: 'no-cors'}, body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -106,7 +106,7 @@ export const deleteGameFromUser2 = (game, user) => dispatch => {
 
     const body = { list, id };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', {mode: 'no-cors'}, body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -115,7 +115,7 @@ export const deleteGameFromUser2 = (game, user) => dispatch => {
 export const deleteRatingFromGame = (game, user) => dispatch => {
     const body = { game, user };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/deleteRatings', {mode: 'no-cors'}, body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/deleteRatings', body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -140,7 +140,7 @@ export const addRatingToUser2 = (num, game, user) => dispatch => {
 
     const body = { list, id };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/rate', {mode: 'no-cors'}, body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/rate', body)
         .catch(err => {
             dispatch(returnErrors());
         })
