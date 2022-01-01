@@ -1,10 +1,11 @@
 import {axiosInstance} from '../../config';
+import axios from 'axios';
 import { returnErrors } from './errorActions';
 
 export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: 'USER_LOADING' });
 
-    axiosInstance.get('/api/auth/user', tokenConfig(getState))
+    axios.get('https://mygaminglist-api-jmr.herokuapp.com/api/auth/user', tokenConfig(getState))
         .then(res => dispatch({
             type: 'USER_LOADED',
             payload: res.data
@@ -26,7 +27,7 @@ export const register = ({name, email, password}) => dispatch => {
 
     const body = JSON.stringify({name, email, password});
 
-    axiosInstance.post('/api/users/reg', body, config)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/reg', body, config)
         .then(res => dispatch({
             type: 'REGISTER_SUCCESS',
             payload: res.data
@@ -48,7 +49,7 @@ export const login = ({email, password}) => dispatch => {
 
     const body = JSON.stringify({email, password});
 
-    axiosInstance.post('/api/auth', body, config)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/auth', body, config)
         .then(res => dispatch({
             type: 'LOGIN_SUCCESS',
             payload: res.data
@@ -83,7 +84,7 @@ export const addGameToUser2 = (game, user) => dispatch => {
 
     const body = { list, id };
 
-    axiosInstance.post('/api/users/game', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -106,7 +107,7 @@ export const deleteGameFromUser2 = (game, user) => dispatch => {
 
     const body = { list, id };
 
-    axiosInstance.post('/api/users/game', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -115,7 +116,7 @@ export const deleteGameFromUser2 = (game, user) => dispatch => {
 export const deleteRatingFromGame = (game, user) => dispatch => {
     const body = { game, user };
 
-    axiosInstance.post('/api/games/deleteRatings', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/deleteRatings', body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -140,7 +141,7 @@ export const addRatingToUser2 = (num, game, user) => dispatch => {
 
     const body = { list, id };
 
-    axiosInstance.post('/api/users/rate', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/rate', body)
         .catch(err => {
             dispatch(returnErrors());
         })

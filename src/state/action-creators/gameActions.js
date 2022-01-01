@@ -1,9 +1,10 @@
 import {axiosInstance} from '../../config';
 import { returnErrors } from './errorActions';
+import axios from 'axios';
 
 export const getGames = () => dispatch => {
     dispatch(setGamesLoading());
-    axiosInstance
+    axios
         .get('https://mygaminglist-api-jmr.herokuapp.com/api/games/get')
         .then(res => dispatch({
             type: 'getGames',
@@ -97,7 +98,7 @@ export const addRatingToGame2 = (num, game, user) => dispatch => {
 
     const body = { game, num, user }
 
-    axiosInstance.post('/api/games/rating', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/rating', body)
         .catch(err => {
             dispatch(returnErrors());
         })
