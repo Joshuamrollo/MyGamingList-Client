@@ -1,0 +1,140 @@
+.home-container {
+  width: 85rem;
+  justify-content: center;
+  display: flex;
+  margin: 0 auto 0 auto;
+}
+
+.headers {
+  display: flex;
+  margin-top: 3rem;
+  border: 3px solid black;
+}
+
+.rank-header {
+  width: 6rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  border-right: 3px solid black;
+}
+
+.title-header {
+  width: 50rem;
+  text-align: center;
+  border-right: 3px solid black;
+}
+
+.rating-header {
+  width: 9rem;
+  text-align: center;
+  border-right: 3px solid black;
+}
+
+.your-rating-header {
+  width: 9rem;
+  text-align: center;
+  border-right: 3px solid black;
+}
+
+.status-header {
+  width: 10.6rem;
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  width: 85rem;
+  height: 10rem;
+  border: 3px solid black;
+  border-top: 0;
+}
+
+.rank-game {
+  width: 6rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  border-right: 3px solid black;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.title-game {
+  width: 50rem;
+  display: flex;
+  border-right: 3px solid black;
+}
+
+.game-name {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.image {
+  width: 35%;
+  margin: auto 0 auto 0;
+  height: 100%;
+}
+
+.rating-game {
+  width: 9rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  border-right: 3px solid black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.your-rating-game {
+  width: 9rem;
+  text-align: center;
+  border-right: 3px solid black;
+  padding-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.your-rating-game:hover {
+  cursor: pointer;
+}
+
+.status-game1 {
+  width: 10.6rem;
+  text-align: center;
+}
+
+.status-game {
+  margin-top: 3rem;
+}
+
+.view-more-games {
+  width: 100%;
+  margin: 1rem auto 3rem auto;
+}
+
+.loading {
+  width: 100%;
+  margin: 10rem auto 0 auto;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.ratingsList {
+  margin: auto;
+  width: 3rem;
+  background-color: white;
+  border: solid black 0.5px;
+}
+
+.listItem {
+  background-color: white;
+  position: relative;
+}

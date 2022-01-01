@@ -1,0 +1,32 @@
+.registerpage {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 10rem;
+}
+
+.item1 {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  margin-bottom: 1rem;
+}
+
+.label {
+  margin-right: 0.5rem;
+}
+
+.input1 {
+  width: 11.5rem;
+}
+
+.input2 {
+  width: 11.8rem;
+}
+
+.input3 {
+  width: 10rem;
+}

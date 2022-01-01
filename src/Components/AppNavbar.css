@@ -1,0 +1,99 @@
+.nav {
+  background-color: #171a21;
+  height: 4rem;
+  display: flex;
+  min-width: 85rem;
+  margin: 0 auto 0 auto;
+}
+
+.title {
+  font-size: 1.7rem;
+  margin: auto 0 auto 4rem;
+}
+
+.title-button {
+  text-decoration: "none";
+  color: white;
+}
+
+.title-button:hover {
+  text-decoration: "none";
+  color: white;
+}
+
+.search {
+  margin: auto;
+}
+
+.search-box {
+  width: 30rem;
+}
+
+.games-dropdown {
+  position: absolute;
+  background-color: white;
+  width: 30rem;
+}
+
+.register {
+  margin: auto 2rem auto 0rem;
+  text-decoration: "inherit";
+  color: white;
+}
+
+.login {
+  margin: auto 2rem auto 0rem;
+  text-decoration: "none";
+  color: white;
+}
+
+.register:hover {
+  color: white;
+}
+
+.login:hover {
+  color: white;
+}
+
+.register2 {
+  margin: auto 0rem auto 0rem;
+  text-decoration: "none";
+  color: white;
+}
+
+.login2 {
+  margin: auto 0rem auto 0rem;
+  text-decoration: "none";
+  color: white;
+}
+
+.reglog {
+  display: flex;
+  color: white;
+}
+
+.profile {
+  margin: auto 2rem auto 0rem;
+  text-decoration: "none";
+  color: white;
+}
+
+.profile2 {
+  margin: auto 0rem auto 0rem;
+  text-decoration: "none";
+  color: white;
+}
+
+.profile2:hover {
+  margin: auto 0rem auto 0rem;
+  text-decoration: "none";
+  color: white;
+}
+
+.proout {
+  display: flex;
+}
+
+.logout {
+  margin: auto 2rem auto 0rem;
+}
