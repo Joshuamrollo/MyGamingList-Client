@@ -5,13 +5,12 @@ import { returnErrors } from './errorActions';
 export const loadUser = () => (dispatch, getState) => {
     dispatch({ type: 'USER_LOADING' });
 
-    axios.get('https://mygaminglist-api-jmr.herokuapp.com/api/auth/user', tokenConfig(getState))
+    axios.get('https://mygaminglist-api-jmr.herokuapp.com/api/auth/user', {mode: 'no-cors'}, tokenConfig(getState))
         .then(res => dispatch({
             type: 'USER_LOADED',
             payload: res.data
         }))
         .catch(err => {
-            dispatch(returnErrors(err.response.data, err.response.status));
             dispatch({
                 type: 'AUTH_ERROR'
             })
@@ -27,7 +26,7 @@ export const register = ({name, email, password}) => dispatch => {
 
     const body = JSON.stringify({name, email, password});
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/reg', body, config)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/reg', {mode: 'no-cors'}, body, config)
         .then(res => dispatch({
             type: 'REGISTER_SUCCESS',
             payload: res.data
@@ -49,7 +48,7 @@ export const login = ({email, password}) => dispatch => {
 
     const body = JSON.stringify({email, password});
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/auth', body, config)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/auth/login', {mode: 'no-cors'}, body, config)
         .then(res => dispatch({
             type: 'LOGIN_SUCCESS',
             payload: res.data
@@ -84,7 +83,7 @@ export const addGameToUser2 = (game, user) => dispatch => {
 
     const body = { list, id };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', {mode: 'no-cors'}, body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -107,7 +106,7 @@ export const deleteGameFromUser2 = (game, user) => dispatch => {
 
     const body = { list, id };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/game', {mode: 'no-cors'}, body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -116,7 +115,7 @@ export const deleteGameFromUser2 = (game, user) => dispatch => {
 export const deleteRatingFromGame = (game, user) => dispatch => {
     const body = { game, user };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/deleteRatings', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/deleteRatings', {mode: 'no-cors'}, body)
         .catch(err => {
             dispatch(returnErrors());
         })
@@ -141,7 +140,7 @@ export const addRatingToUser2 = (num, game, user) => dispatch => {
 
     const body = { list, id };
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/rate', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/users/rate', {mode: 'no-cors'}, body)
         .catch(err => {
             dispatch(returnErrors());
         })

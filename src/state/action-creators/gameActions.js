@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getGames = () => dispatch => {
     dispatch(setGamesLoading());
     axios
-        .get('https://mygaminglist-api-jmr.herokuapp.com/api/games/get')
+        .get('https://mygaminglist-api-jmr.herokuapp.com/api/games/get', {mode: 'no-cors'})
         .then(res => dispatch({
             type: 'getGames',
             payload: res.data
@@ -98,7 +98,7 @@ export const addRatingToGame2 = (num, game, user) => dispatch => {
 
     const body = { game, num, user }
 
-    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/rating', body)
+    axios.post('https://mygaminglist-api-jmr.herokuapp.com/api/games/rating', {mode: 'no-cors'}, body)
         .catch(err => {
             dispatch(returnErrors());
         })
